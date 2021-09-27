@@ -13,19 +13,10 @@ namespace Freezer
         [HarmonyPatch("Initialize")]
         public class Db_Initialize_Patch
         {
-            public static void Prefix()
-            {
-            }
-
             public static void Postfix()
             {
-                Debug.Log("I execute after Db.Initialize!");
-                AddBuildingToBuildMenu("Food", FreezerConfig.ID);
+                AddBuildingToBuildMenu("Food", FreezerConfig.ID, RefrigeratorConfig.ID);
                 AddBuildingToTech("FinerDining", FreezerConfig.ID);
-                // AddStatusItem("FRIDGECOOLING", "NAME", "Cooling Contents: {UsedPower}", "BUILDING");
-                // AddStatusItem("FRIDGECOOLING", "TOOLTIP", "{UsedPower} of {MaxPower} are being used to cool the contents of this food storage", "BUILDING");
-                // AddStatusItem("FRIDGESTEADY", "NAME", "Energy Saver: {UsedPower}", "BUILDING");
-                // AddStatusItem("FRIDGESTEADY", "TOOLTIP", "The contents of this food storage are at refrigeration temperatures\n\nEnergy Saver mode has been automatically activated using only {UsedPower} of {MaxPower}", "BUILDING");
             }
         }
 

@@ -12,14 +12,12 @@ namespace Freezer
         [Serialize] private float userMaxCapacity = float.PositiveInfinity;
         private FilteredStorage filteredStorage;
 
-        private static readonly EventSystem.IntraObjectHandler<Freezer> OnCopySettingsDelegate =
-            new EventSystem.IntraObjectHandler<Freezer>(
-                (System.Action<Freezer, object>) ((component, data) => component.OnCopySettings(data)));
+        private static readonly EventSystem.IntraObjectHandler<Freezer> OnCopySettingsDelegate = new EventSystem.IntraObjectHandler<Freezer>((System.Action<Freezer, object>) ((component, data) => component.OnCopySettings(data)));
 
-        private static readonly EventSystem.IntraObjectHandler<Freezer> UpdateLogicCircuitCBDelegate =
-            new EventSystem.IntraObjectHandler<Freezer>(
-                (System.Action<Freezer, object>) ((component, data) => component.UpdateLogicCircuitCB(data)));
-
+        private static readonly EventSystem.IntraObjectHandler<Freezer> UpdateLogicCircuitCBDelegate = new EventSystem.IntraObjectHandler<Freezer>((System.Action<Freezer, object>) ((component, data) => component.UpdateLogicCircuitCB(data)));
+        
+        private static readonly EventSystem.IntraObjectHandler<Freezer> UpdateIciclesDelegate = new EventSystem.IntraObjectHandler<Freezer>((System.Action<Freezer, object>) ((component, data) => component.UpdateIcicles()));
+        
         protected override void OnPrefabInit() => this.filteredStorage = new FilteredStorage((KMonoBehaviour) this,
             (Tag[]) null, new Tag[1]
             {
@@ -31,11 +29,13 @@ namespace Freezer
             this.GetComponent<KAnimControllerBase>().Play((HashedString) "off");
             this.filteredStorage.FilterChanged();
             this.UpdateLogicCircuit();
-            this.Subscribe<Freezer>((int) GameHashes.CopySettings, Freezer.OnCopySettingsDelegate);
-            this.Subscribe<Freezer>((int) GameHashes.OnStorageChange, Freezer.UpdateLogicCircuitCBDelegate);
-            this.Subscribe<Freezer>((int) GameHashes.OperationalChanged, Freezer.UpdateLogicCircuitCBDelegate);
+            this.Subscribe((int) GameHashes.CopySettings, Freezer.OnCopySettingsDelegate);
+            this.Subscribe((int) GameHashes.OnStorageChange, Freezer.UpdateLogicCircuitCBDelegate);
+            this.Subscribe((int) GameHashes.OperationalChanged, Freezer.UpdateLogicCircuitCBDelegate);
+            this.Subscribe((int) GameHashes.OperationalChanged, Freezer.UpdateIciclesDelegate);
+            this.UpdateIcicles();
         }
-
+ 
         protected override void OnCleanUp() => this.filteredStorage.CleanUp();
 
         public bool IsActive() => this.operational.IsActive;
@@ -43,12 +43,12 @@ namespace Freezer
         private void OnCopySettings(object data)
         {
             GameObject gameObject = (GameObject) data;
-            if ((UnityEngine.Object) gameObject == (UnityEngine.Object) null)
+            if (gameObject == null)
                 return;
-            Freezer component = gameObject.GetComponent<Freezer>();
-            if ((UnityEngine.Object) component == (UnityEngine.Object) null)
+            Freezer freezerComponent = gameObject.GetComponent<Freezer>();
+            if (freezerComponent == null)
                 return;
-            this.UserMaxCapacity = component.UserMaxCapacity;
+            this.UserMaxCapacity = freezerComponent.UserMaxCapacity;
         }
 
         public float UserMaxCapacity
@@ -79,6 +79,15 @@ namespace Freezer
             bool on = this.filteredStorage.IsFull() & this.operational.IsOperational;
             this.ports.SendSignal(FilteredStorage.FULL_PORT_ID, on ? 1 : 0);
             this.filteredStorage.SetLogicMeter(on);
+        }
+        
+        protected void UpdateIcicles()
+        {
+            KBatchedAnimController component = this.GetComponent<KBatchedAnimController>();
+            // Add all icicles symbols from anim
+            component.SetSymbolVisiblity((KAnimHashedString) "ice", this.operational.IsOperational); 
+            component.SetSymbolVisiblity((KAnimHashedString) "ice_b", this.operational.IsOperational); 
+            component.SetSymbolVisiblity((KAnimHashedString) "gasframes", this.operational.IsOperational); 
         }
     }
 }
