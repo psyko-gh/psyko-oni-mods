@@ -2,6 +2,10 @@
 
     <PropertyGroup>
         <TargetFramework>net471</TargetFramework>
+        <Authors>Psyko</Authors>
+        <Company>Psyko</Company>
+        <Product>oni-mods</Product>
+        <UsePLib>true</UsePLib>
     </PropertyGroup>
 
     <ItemGroup>
@@ -11,6 +15,7 @@
       <None Update="mod_info.yaml">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+      <None Remove="anim\assets\freezer\spriter\door_0.png~" />
     </ItemGroup>
 
 </Project>

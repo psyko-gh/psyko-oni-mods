@@ -1,0 +1,1 @@
+kanimal-cli.exe kanim .\Freezer.scml -o ../

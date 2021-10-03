@@ -1,22 +1,34 @@
 ﻿using HarmonyLib;
-using static SkyLib.OniUtils;
 using KMod;
 using System;
 using System.IO;
+using System.Reflection;
 using static Localization;
+using PeterHan.PLib.AVC;
+using PeterHan.PLib.Core;
+using PeterHan.PLib.Database;
+using Psyko.OniUtils;
 
-namespace Freezer
+namespace Psyko.Freezer
 {
-    public class FreezerPatch
+    public class FreezerPatch : KMod.UserMod2
     {
+        public override void OnLoad(Harmony harmony) {
+            base.OnLoad(harmony);
+            PUtil.InitLibrary();
+            LocString.CreateLocStringKeys(typeof(STRINGS));
+            new PLocalization().Register();
+            new PVersionCheck().Register(this, new SteamVersionChecker());
+        }
+
         [HarmonyPatch(typeof(Db))]
         [HarmonyPatch("Initialize")]
-        public class Db_Initialize_Patch
+        public static class Db_Initialize_Patch
         {
             public static void Postfix()
             {
-                AddBuildingToBuildMenu("Food", FreezerConfig.ID, RefrigeratorConfig.ID);
-                AddBuildingToTech("FinerDining", FreezerConfig.ID);
+                Utils.AddBuildingToTech("FinerDining", FreezerConfig.ID);
+                Utils.AddPlan("Food", FreezerConfig.ID, RefrigeratorConfig.ID);
             }
         }
 
@@ -24,7 +36,7 @@ namespace Freezer
         public class Localization_Initialize_Patch
         {
             public static void Postfix() => Translate(typeof(STRINGS));
- 
+            
             public static void Translate(Type root)
             {
                 // Basic intended way to register strings, keeps namespace
@@ -40,13 +52,15 @@ namespace Freezer
                 // Creates template for users to edit
                 GenerateStringsTemplate(root, Path.Combine(Manager.GetDirectory(), "strings_templates"));
             }
- 
+            
             private static void LoadStrings()
             {
-                // string path = Path.Combine(ModPath, "translations", GetLocale()?.Code + ".po");
-                // if (File.Exists(path))
-                //     OverloadStrings(LoadStringsFile(path, false));
+                var modPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                string path = Path.Combine(modPath, "translations", GetLocale()?.Code + ".po");
+                if (File.Exists(path))
+                    OverloadStrings(LoadStringsFile(path, false));
             }
         }
+        
     }
 }

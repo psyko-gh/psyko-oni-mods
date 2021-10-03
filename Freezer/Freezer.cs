@@ -1,38 +1,47 @@
 ﻿using KSerialization;
-using STRINGS;
 using UnityEngine;
 
-namespace Freezer
+namespace Psyko.Freezer
 {
     public class Freezer : KMonoBehaviour, IUserControlledCapacity
     {
-        [MyCmpGet] private Storage storage;
-        [MyCmpGet] private Operational operational;
-        [MyCmpGet] private LogicPorts ports;
-        [Serialize] private float userMaxCapacity = float.PositiveInfinity;
+        [MyCmpGet] 
+        private Storage storage;
+        [MyCmpGet] 
+        private Operational operational;
+        [MyCmpGet] 
+        private LogicPorts ports;
+        [Serialize] 
+        private float userMaxCapacity = float.PositiveInfinity;
         private FilteredStorage filteredStorage;
 
-        private static readonly EventSystem.IntraObjectHandler<Freezer> OnCopySettingsDelegate = new EventSystem.IntraObjectHandler<Freezer>((System.Action<Freezer, object>) ((component, data) => component.OnCopySettings(data)));
+        private static readonly EventSystem.IntraObjectHandler<Freezer> OnCopySettingsDelegate = new EventSystem.IntraObjectHandler<Freezer>((component, data) => component.OnCopySettings(data));
 
-        private static readonly EventSystem.IntraObjectHandler<Freezer> UpdateLogicCircuitCBDelegate = new EventSystem.IntraObjectHandler<Freezer>((System.Action<Freezer, object>) ((component, data) => component.UpdateLogicCircuitCB(data)));
+        private static readonly EventSystem.IntraObjectHandler<Freezer> UpdateLogicCircuitCBDelegate = new EventSystem.IntraObjectHandler<Freezer>((component, data) => component.UpdateLogicCircuitCB(data));
         
-        private static readonly EventSystem.IntraObjectHandler<Freezer> UpdateIciclesDelegate = new EventSystem.IntraObjectHandler<Freezer>((System.Action<Freezer, object>) ((component, data) => component.UpdateIcicles()));
+        private static readonly EventSystem.IntraObjectHandler<Freezer> UpdateIciclesDelegate = new EventSystem.IntraObjectHandler<Freezer>((component, data) => component.UpdateIcicles());
         
-        protected override void OnPrefabInit() => this.filteredStorage = new FilteredStorage((KMonoBehaviour) this,
-            (Tag[]) null, new Tag[1]
+        protected override void OnPrefabInit() => this.filteredStorage = new FilteredStorage(
+            this,
+            null, 
+            new Tag[1]
             {
                 GameTags.Compostable
-            }, (IUserControlledCapacity) this, true, Db.Get().ChoreTypes.FoodFetch);
+            }, 
+            this, 
+            true, 
+            Db.Get().ChoreTypes.FoodFetch); 
 
         protected override void OnSpawn()
         {
+            this.name = STRINGS.BUILDINGS.PREFABS.FREEZER.NAME;
             this.GetComponent<KAnimControllerBase>().Play((HashedString) "off");
             this.filteredStorage.FilterChanged();
             this.UpdateLogicCircuit();
-            this.Subscribe((int) GameHashes.CopySettings, Freezer.OnCopySettingsDelegate);
-            this.Subscribe((int) GameHashes.OnStorageChange, Freezer.UpdateLogicCircuitCBDelegate);
-            this.Subscribe((int) GameHashes.OperationalChanged, Freezer.UpdateLogicCircuitCBDelegate);
-            this.Subscribe((int) GameHashes.OperationalChanged, Freezer.UpdateIciclesDelegate);
+            this.Subscribe((int) GameHashes.CopySettings, OnCopySettingsDelegate);
+            this.Subscribe((int) GameHashes.OnStorageChange, UpdateLogicCircuitCBDelegate);
+            this.Subscribe((int) GameHashes.OperationalChanged, UpdateLogicCircuitCBDelegate);
+            this.Subscribe((int) GameHashes.OperationalChanged, UpdateIciclesDelegate);
             this.UpdateIcicles();
         }
  
