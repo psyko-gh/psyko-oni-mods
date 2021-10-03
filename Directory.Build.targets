@@ -50,7 +50,7 @@
   
   <Target Name="AfterBuild" DependsOnTargets="CopyArtifactsToInstallFolder" />
 
-  <Target Name="CopyArtifactsToInstallFolder" Condition=" '$(AssemblyName)' != 'SkyLib' ">
+  <Target Name="CopyArtifactsToInstallFolder" Condition="'$(AssemblyName)' != 'OniUtils'">
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
       <InstallFolder>$(ModFolder)\$(ProjectName)</InstallFolder>
     </PropertyGroup>
@@ -63,6 +63,7 @@
       <WorldgenFiles Include="$(ProjectDir)\worldgen\**\*.*" />
       <ConfigFiles Include="$(ProjectDir)\config\*.*"/>
       <YamlFiles Include="$(TargetDir)\*.yaml"/>
+      <TranslationFiles Include="$(ProjectDir)\translations\*.po"/>
     </ItemGroup>
 
     <Copy SourceFiles="@(AnimFiles)"
@@ -75,6 +76,8 @@
           DestinationFiles="$(InstallFolder)\$(TargetFileName)" />
     <Copy SourceFiles="@(YamlFiles)"
         DestinationFiles="@(YamlFiles->'$(InstallFolder)\%(Filename)%(Extension)')"/>
+    <Copy SourceFiles="@(TranslationFiles)"
+          DestinationFolder="$(InstallFolder)\translations"/>
     <Copy Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " 
           SourceFiles="$(TargetDir)\$(TargetName).pdb;$(TargetDir)\$(TargetFileName).mdb" 
           DestinationFiles="$(InstallFolder)\$(TargetName).pdb;$(InstallFolder)\$(TargetFileName).mdb" />
