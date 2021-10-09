@@ -13,15 +13,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Language: fr_FR\n"
 
-#. Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.DESC
-msgctxt "Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.DESC"
+#. Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.EFFECT
+msgctxt "Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.EFFECT"
 msgid "Send a logic pulse before going back to its initial state"
 msgstr ""
 "Отправляет логический импульс, перед тем, как вернуться в исходное положение"
 
-#. Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.EFFECT
+#. Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.DESC
 msgctxt ""
-"Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.EFFECT"
+"Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.DESC"
 msgid ""
 "Signal switches don't turn grids on and off like power switches, but add an "
 "extra signal."
