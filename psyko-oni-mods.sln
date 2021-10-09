@@ -3,11 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JouleSensor", "JouleSensor\JouleSensor.csproj", "{85BCE63B-422B-4E11-8E1E-352916185CC5}"
-	ProjectSection(ProjectDependencies) = postProject
-		{26E8DCD7-A664-48B0-9B2A-EA01FEA6A3F2} = {26E8DCD7-A664-48B0-9B2A-EA01FEA6A3F2}
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MSBuild", "MSBuild", "{B78B19F8-5618-4AEE-849D-CD3617D3CBBA}"
 	ProjectSection(SolutionItems) = preProject
 		Directory.Build.props = Directory.Build.props
@@ -17,13 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MSBuild", "MSBuild", "{B78B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freezer", "Freezer\Freezer.csproj", "{A605474B-68A3-4F02-9691-DC79066624A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConduitTag", "ConduitTag\ConduitTag.csproj", "{27F4A350-2AF2-437E-A15C-8FA8564A229F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OniUtils", "OniUtils\OniUtils.csproj", "{84F7A199-E043-487E-BF9A-14791774C71B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuitLockerDelivery", "SuitLockerDelivery\SuitLockerDelivery.csproj", "{8BFDED69-CF16-43E4-8A64-131999FEF885}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rewire", "Rewire\Rewire.csproj", "{13799896-010E-4B8B-B3A3-442EA5BE90C9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MomentarySwitch", "MomentarySwitch\MomentarySwitch.csproj", "{7D502C97-C357-46A5-A569-5D31B47B0722}"
 EndProject
@@ -33,30 +22,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{85BCE63B-422B-4E11-8E1E-352916185CC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{85BCE63B-422B-4E11-8E1E-352916185CC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{85BCE63B-422B-4E11-8E1E-352916185CC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{85BCE63B-422B-4E11-8E1E-352916185CC5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A605474B-68A3-4F02-9691-DC79066624A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A605474B-68A3-4F02-9691-DC79066624A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A605474B-68A3-4F02-9691-DC79066624A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A605474B-68A3-4F02-9691-DC79066624A6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{27F4A350-2AF2-437E-A15C-8FA8564A229F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{27F4A350-2AF2-437E-A15C-8FA8564A229F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{27F4A350-2AF2-437E-A15C-8FA8564A229F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{27F4A350-2AF2-437E-A15C-8FA8564A229F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{84F7A199-E043-487E-BF9A-14791774C71B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{84F7A199-E043-487E-BF9A-14791774C71B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84F7A199-E043-487E-BF9A-14791774C71B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84F7A199-E043-487E-BF9A-14791774C71B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8BFDED69-CF16-43E4-8A64-131999FEF885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8BFDED69-CF16-43E4-8A64-131999FEF885}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8BFDED69-CF16-43E4-8A64-131999FEF885}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8BFDED69-CF16-43E4-8A64-131999FEF885}.Release|Any CPU.Build.0 = Release|Any CPU
-		{13799896-010E-4B8B-B3A3-442EA5BE90C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{13799896-010E-4B8B-B3A3-442EA5BE90C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{13799896-010E-4B8B-B3A3-442EA5BE90C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{13799896-010E-4B8B-B3A3-442EA5BE90C9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7D502C97-C357-46A5-A569-5D31B47B0722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7D502C97-C357-46A5-A569-5D31B47B0722}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D502C97-C357-46A5-A569-5D31B47B0722}.Release|Any CPU.ActiveCfg = Release|Any CPU
