@@ -1,0 +1,51 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not IncludedPOT Version: 2.0\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: ru_RU\n"
+
+#. Psyko.Freezer.STRINGS.BUILDINGS.PREFABS.FREEZER.DESC
+msgctxt "Psyko.Freezer.STRINGS.BUILDINGS.PREFABS.FREEZER.DESC"
+msgid "Food will be kept nice and very cold."
+msgstr "Еда в сильном холоде хорошо сохранится "
+
+#. Psyko.Freezer.STRINGS.BUILDINGS.PREFABS.FREEZER.EFFECT
+msgctxt "Psyko.Freezer.STRINGS.BUILDINGS.PREFABS.FREEZER.EFFECT"
+msgid ""
+"Stores <link=\"FOOD\">Food</link> at a very cold <link=\"HEAT\">Temperature</"
+"link> to stop spoilage."
+msgstr ""
+"Хранит <link=\"FOOD\">Еду</link> в очень холодной <link=\"HEAT"
+"\">Температуре</link> для предотвращения порчи."
+
+#. Psyko.Freezer.STRINGS.BUILDINGS.PREFABS.FREEZER.LOGIC_PORT
+msgctxt "Psyko.Freezer.STRINGS.BUILDINGS.PREFABS.FREEZER.LOGIC_PORT"
+msgid "Full/Not Full"
+msgstr "Полный/Не Полный"
+
+#. Psyko.Freezer.STRINGS.BUILDINGS.PREFABS.FREEZER.LOGIC_PORT_ACTIVE
+msgctxt "Psyko.Freezer.STRINGS.BUILDINGS.PREFABS.FREEZER.LOGIC_PORT_ACTIVE"
+msgid "Sends a <b><style=\"logic_on\">Green Signal</style></b> when full"
+msgstr ""
+"Отправляет <b><style=\"logic_on\">Зелёный сигнал</style></b> когда полный"
+
+#. Psyko.Freezer.STRINGS.BUILDINGS.PREFABS.FREEZER.LOGIC_PORT_INACTIVE
+msgctxt "Psyko.Freezer.STRINGS.BUILDINGS.PREFABS.FREEZER.LOGIC_PORT_INACTIVE"
+msgid "Otherwise, sends a <b><style=\"logic_off\">Red Signal</style></b>"
+msgstr ""
+"В противном случае, отправляет <b><style=\"logic_off\">Красный сигнал</"
+"style></b>"
+
+#. Psyko.Freezer.STRINGS.BUILDINGS.PREFABS.FREEZER.NAME
+msgctxt "Psyko.Freezer.STRINGS.BUILDINGS.PREFABS.FREEZER.NAME"
+msgid "<link=\"FREEZER\">Freezer</link>"
+msgstr "<link=\"FREEZER\">Морозилка</link>"

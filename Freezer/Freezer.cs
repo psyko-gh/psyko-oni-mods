@@ -34,7 +34,6 @@ namespace Psyko.Freezer
 
         protected override void OnSpawn()
         {
-            this.name = STRINGS.BUILDINGS.PREFABS.FREEZER.NAME;
             this.GetComponent<KAnimControllerBase>().Play((HashedString) "off");
             this.filteredStorage.FilterChanged();
             this.UpdateLogicCircuit();

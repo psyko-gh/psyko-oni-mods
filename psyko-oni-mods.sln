@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OniUtils", "OniUtils\OniUti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuitLockerDelivery", "SuitLockerDelivery\SuitLockerDelivery.csproj", "{8BFDED69-CF16-43E4-8A64-131999FEF885}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rewire", "Rewire\Rewire.csproj", "{13799896-010E-4B8B-B3A3-442EA5BE90C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MomentarySwitch", "MomentarySwitch\MomentarySwitch.csproj", "{7D502C97-C357-46A5-A569-5D31B47B0722}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,14 @@ Global
 		{8BFDED69-CF16-43E4-8A64-131999FEF885}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BFDED69-CF16-43E4-8A64-131999FEF885}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BFDED69-CF16-43E4-8A64-131999FEF885}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13799896-010E-4B8B-B3A3-442EA5BE90C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13799896-010E-4B8B-B3A3-442EA5BE90C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13799896-010E-4B8B-B3A3-442EA5BE90C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13799896-010E-4B8B-B3A3-442EA5BE90C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D502C97-C357-46A5-A569-5D31B47B0722}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D502C97-C357-46A5-A569-5D31B47B0722}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D502C97-C357-46A5-A569-5D31B47B0722}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D502C97-C357-46A5-A569-5D31B47B0722}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

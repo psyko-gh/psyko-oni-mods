@@ -5,3 +5,4 @@
 *.DotSettings.user
 .dbcache.v2
 *.autosave.scml
+.vscode

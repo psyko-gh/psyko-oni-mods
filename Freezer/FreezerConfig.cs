@@ -35,6 +35,7 @@ namespace Psyko.Freezer
                 decor: BUILDINGS.DECOR.BONUS.TIER1,
                 noise: NOISE_POLLUTION.NONE
             );
+            def.name = STRINGS.BUILDINGS.PREFABS.FREEZER.NAME;
             def.RequiresPowerInput = true;
             def.EnergyConsumptionWhenActive = ENERGY_ACTIVE_POWER;
             def.SelfHeatKilowattsWhenActive = COOLING_HEAT_KW;
@@ -48,7 +49,9 @@ namespace Psyko.Freezer
                 LogicPorts.Port.OutputPort(
                     FilteredStorage.FULL_PORT_ID,
                     new CellOffset(0, 1),
-                    null, null, null)
+                    STRINGS.BUILDINGS.PREFABS.FREEZER.LOGIC_PORT,
+                    STRINGS.BUILDINGS.PREFABS.FREEZER.LOGIC_PORT_ACTIVE,
+                    STRINGS.BUILDINGS.PREFABS.FREEZER.LOGIC_PORT_INACTIVE)
             };
             def.ObjectLayer = ObjectLayer.Building;
             def.OverheatTemperature = 75.0f + Constants.CELSIUS2KELVIN;
