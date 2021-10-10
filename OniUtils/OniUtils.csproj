@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <AssemblyTitle>OniUtils</AssemblyTitle>
+        <Version>1.0.0</Version>
+        <TargetFramework>net471</TargetFramework>
+        <Authors>Psyko</Authors>
+        <Company>Psyko</Company>
+        <UseOniUtils>false</UseOniUtils>
+    </PropertyGroup>
+
+</Project>

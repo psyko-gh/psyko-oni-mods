@@ -1,0 +1,68 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not IncludedPOT Version: 2.0\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr_FR\n"
+
+#. Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.EFFECT
+msgctxt "Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.EFFECT"
+msgid "Send a logic pulse before going back to its initial state"
+msgstr ""
+"Отправляет логический импульс, перед тем, как вернуться в исходное положение"
+
+#. Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.DESC
+msgctxt ""
+"Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.DESC"
+msgid ""
+"Signal switches don't turn grids on and off like power switches, but add an "
+"extra signal."
+msgstr ""
+"Сигнальный выключатель не позволяет включить или выключить, но добавляет "
+"дополнительный сигнал."
+
+#. Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.LOGIC_PORT
+msgctxt ""
+"Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.LOGIC_PORT"
+msgid "Signal output"
+msgstr "Сигнальный вывод"
+
+#. Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.LOGIC_PORT_ACTIVE
+msgctxt ""
+"Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH."
+"LOGIC_PORT_ACTIVE"
+msgid ""
+"Sends a <b><style=\"logic_on\">Green Signal</style></b> when pressed, for a "
+"small duration"
+msgstr ""
+"Отправляет <b><style=\"logic_on\">Зелёный Сигнал</style></b> когда нажат на "
+"короткий промежуток времени"
+
+#. Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.LOGIC_PORT_INACTIVE
+msgctxt ""
+"Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH."
+"LOGIC_PORT_INACTIVE"
+msgid "Otherwise, sends a <b><style=\"logic_off\">Red Signal</style></b>"
+msgstr ""
+"В противном случае, отправляет <b><style=\"logic_off\">Красный Сигнал</"
+"style></b>"
+
+#. Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.NAME
+msgctxt "Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.NAME"
+msgid "<link=\"MOMENTARYSWITCH\">Momentary switch</link>"
+msgstr "<link=\"MOMENTARYSWITCH\">Мгновенный переключатель</link>"
+
+#. Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.SIDESCREEN_TITLE
+msgctxt ""
+"Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH."
+"SIDESCREEN_TITLE"
+msgid "Momentary switch"
+msgstr "Мгновенный переключатель"

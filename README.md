@@ -18,4 +18,4 @@ If you find what you think is a bug, please feel free to open a report in [Issue
 |  **Name**  |  **Description**  |  **Vanilla**  |  **Spaced Out! DLC**  |
 | :--------: | :---------------: | :-----------: | :-------------------: |
 | Freezer    | Easily deep freeze your food | Yes | Yes |
-| Power sensor    | A sensor for detecting stored power on an electrical circuit | Yes | Yes |
+| Momentary switch    | Logic switch that will send a green signal for a short time before going off again | Yes | Yes |

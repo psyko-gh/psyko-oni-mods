@@ -27,7 +27,9 @@
     <Reference Include="0Harmony" />
     <Reference Include="Assembly-CSharp" />
     <Reference Include="Assembly-CSharp-firstpass" />
+    <Reference Include="UnityEngine" />
     <Reference Include="UnityEngine.CoreModule" />
+    <Reference Include="UnityEngine.InputLegacyModule" />
   </ItemGroup>
   <ItemGroup Condition="'$(UseOniUtils)' != 'false'">
     <ProjectReference Include="..\OniUtils\OniUtils.csproj" Private="true" />
