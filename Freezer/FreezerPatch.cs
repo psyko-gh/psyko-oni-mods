@@ -2,6 +2,7 @@
 using KMod;
 using PeterHan.PLib.AVC;
 using PeterHan.PLib.Core;
+using PeterHan.PLib.Options;
 using Psyko.OniUtils;
 
 namespace Psyko.Freezer
@@ -11,6 +12,8 @@ namespace Psyko.Freezer
         public override void OnLoad(Harmony harmony) {
             base.OnLoad(harmony);
             PUtil.InitLibrary();
+            POptions pOptions = new POptions();
+            pOptions.RegisterOptions(this, typeof(FreezerOptions));
             LocString.CreateLocStringKeys(typeof(STRINGS));
             new PVersionCheck().Register(this, new SteamVersionChecker());
         }

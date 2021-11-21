@@ -8,9 +8,9 @@ namespace Psyko.Freezer
     public class FreezerConfig: IBuildingConfig
     {
         public const string ID = "Freezer";
-        private const float CAPACITY_KG = 200f;
-        private const int ENERGY_SAVER_POWER = 40;
-        private const float ENERGY_ACTIVE_POWER = 480f;
+        public const float CAPACITY_KG = 200f;
+        public const int ENERGY_SAVER_POWER = 40;
+        public const float ENERGY_ACTIVE_POWER = 480f;
         private const float COOLING_HEAT_KW = 0.375f;
         private const float STEADY_HEAT_KW = 0.0f;
         private const float SIMULATED_INTERNAL_TEMPERATUR_KELVIN = 254.15f;
@@ -21,6 +21,14 @@ namespace Psyko.Freezer
             PGameUtils.CopySoundsToAnim(KANIM, "refrigerator_kanim");
             SoundEventVolumeCache.instance.AddVolume(KANIM, "Refrigerator_open", TUNING.NOISE_POLLUTION.NOISY.TIER1);
             SoundEventVolumeCache.instance.AddVolume(KANIM, "Refrigerator_close", TUNING.NOISE_POLLUTION.NOISY.TIER1);
+            string[] materials = {
+                MATERIALS.REFINED_METAL,
+                MATERIALS.PLASTIC
+            };
+            float[] materialMasses = {
+                BUILDINGS.CONSTRUCTION_MASS_KG.TIER4[0],
+                BUILDINGS.CONSTRUCTION_MASS_KG.TIER1[0]
+            };
             BuildingDef def = BuildingTemplates.CreateBuildingDef(
                 id: ID,
                 width: 2,
@@ -28,8 +36,8 @@ namespace Psyko.Freezer
                 anim: KANIM,
                 hitpoints: BUILDINGS.HITPOINTS.TIER0,
                 construction_time: 20f,
-                construction_mass: BUILDINGS.CONSTRUCTION_MASS_KG.TIER4,
-                construction_materials: MATERIALS.ALL_METALS,
+                construction_mass: materialMasses,
+                construction_materials: materials,
                 melting_point: BUILDINGS.MELTING_POINT_KELVIN.TIER0,
                 build_location_rule: BuildLocationRule.OnFloor,
                 decor: BUILDINGS.DECOR.BONUS.TIER1,
@@ -37,7 +45,7 @@ namespace Psyko.Freezer
             );
             def.name = STRINGS.BUILDINGS.PREFABS.FREEZER.NAME;
             def.RequiresPowerInput = true;
-            def.EnergyConsumptionWhenActive = ENERGY_ACTIVE_POWER;
+            def.EnergyConsumptionWhenActive = FreezerOptions.Instance.EnergyActivePower;
             def.SelfHeatKilowattsWhenActive = COOLING_HEAT_KW;
             def.ExhaustKilowattsWhenActive = 0.0f;
             def.AudioCategory = "Metal";
@@ -67,7 +75,7 @@ namespace Psyko.Freezer
             storage.showDescriptor = true;
             storage.storageFilters = TUNING.STORAGEFILTERS.FOOD;
             storage.allowItemRemoval = true;
-            storage.capacityKg = CAPACITY_KG;
+            storage.capacityKg = FreezerOptions.Instance.Capacity;
             storage.storageFullMargin = TUNING.STORAGE.STORAGE_LOCKER_FILLED_MARGIN;
             storage.fetchCategory = Storage.FetchCategory.GeneralStorage;
             storage.showCapacityStatusItem = true;
@@ -75,7 +83,7 @@ namespace Psyko.Freezer
             go.AddOrGet<TreeFilterable>();
             go.AddOrGet<Freezer>();
             RefrigeratorController.Def def = go.AddOrGetDef<RefrigeratorController.Def>();
-            def.powerSaverEnergyUsage = ENERGY_SAVER_POWER;
+            def.powerSaverEnergyUsage = FreezerOptions.Instance.EnergySaverPower;
             def.coolingHeatKW = COOLING_HEAT_KW;
             def.steadyHeatKW = STEADY_HEAT_KW;
             def.simulatedInternalTemperature = SIMULATED_INTERNAL_TEMPERATUR_KELVIN;
