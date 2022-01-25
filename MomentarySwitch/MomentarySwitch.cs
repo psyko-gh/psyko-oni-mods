@@ -1,10 +1,11 @@
 ﻿using KSerialization;
+using STRINGS;
 
 namespace Psyko.MomentarySwitch
 {
     
     [SerializationConfig(MemberSerialization.OptIn)]
-    public class MomentarySwitch: Switch, IPlayerControlledToggle, ISim200ms
+    public class MomentarySwitch: Switch, IPlayerControlledToggle, ISingleSliderControl, ISim200ms
     {
         private bool wasOn;
         [Serialize] private float delayAmount = 1f;
@@ -12,7 +13,7 @@ namespace Psyko.MomentarySwitch
         [Serialize] private bool normallyOpen = true;
         public event System.Action onStateChange;
         
-        public float DelayAmount { get; set; }
+        // public float DelayAmount { get; set; }
 
         public bool NormallyOpen
         {
@@ -103,5 +104,24 @@ namespace Psyko.MomentarySwitch
         
         public string SideScreenTitleKey => "STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.SIDESCREEN_TITLE";
 
+        public string SliderTitleKey => "STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.SIDESCREEN_TITLE";
+
+        public string SliderUnits => (string) UI.UNITSUFFIXES.SECOND;
+        
+        public int SliderDecimalPlaces(int index) => 1;
+        
+        public float GetSliderMin(int index) => 0.1f;
+
+        public float GetSliderMax(int index) => 10f;
+
+        public float GetSliderValue(int index) => this.delayAmount;
+
+        public void SetSliderValue(float value, int index) => this.delayAmount = value;
+
+        public string GetSliderTooltipKey(int index) => "STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.SIDESCREEN_DURATION_TOOLTIP";
+
+        string ISliderControl.GetSliderTooltip() => string.Format((string) Strings.Get("STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.SIDESCREEN_DURATION_TOOLTIP"), (object) this.delayAmount);
+
+        
     }
 }

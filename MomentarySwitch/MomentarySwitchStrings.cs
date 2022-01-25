@@ -1,4 +1,5 @@
-﻿using static STRINGS.UI;
+﻿using STRINGS;
+using static STRINGS.UI;
 
 namespace Psyko.MomentarySwitch
 {
@@ -17,6 +18,7 @@ namespace Psyko.MomentarySwitch
                     public static LocString LOGIC_PORT_ACTIVE = "Sends a " + FormatAsAutomationState("Green Signal", AutomationState.Active) + " when pressed, for a small duration";
                     public static LocString LOGIC_PORT_INACTIVE = "Otherwise, sends a " + FormatAsAutomationState("Red Signal", AutomationState.Standby);
                     public static LocString SIDESCREEN_TITLE = "Momentary switch";
+                    public static LocString SIDESCREEN_DURATION_TOOLTIP = "Will send " + UI.FormatAsAutomationState("Green Signal", UI.AutomationState.Active) + " for <b>{0} seconds</b> when pressed";
                 }
             }
         }

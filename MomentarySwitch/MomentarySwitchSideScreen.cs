@@ -28,7 +28,7 @@ namespace Psyko.MomentarySwitch
             ui.SetActive(false);
             
             kbac = ui.AddOrGet<KBatchedAnimController>();
-            kbac.Offset = new Vector3(0, -50, 0);
+            kbac.Offset = new Vector3(0, -70, 0);
             kbac.materialType = KAnimBatchGroup.MaterialType.UI;
             kbac.setScaleFromAnim = false;
             kbac.SetVisiblity(true);
@@ -50,7 +50,7 @@ namespace Psyko.MomentarySwitch
             buttonSoundPlayer.Enabled = true;
             button.soundPlayer = buttonSoundPlayer;
             button.onClick += this.RequestToggle;
-            
+
             ui.SetMinUISize(new Vector2(140, 140));
             ui.SetActive(true);
 

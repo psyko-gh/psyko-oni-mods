@@ -64,3 +64,11 @@ msgctxt ""
 "SIDESCREEN_TITLE"
 msgid "Momentary switch"
 msgstr "Interrupteur momentané"
+
+#. Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.SIDESCREEN_DURATION_TOOLTIP
+msgctxt ""
+"Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH."
+"SIDESCREEN_DURATION_TOOLTIP"
+msgid "Will send <b><style=\"logic_on\">Green Signal</style></b> for <b>{0} seconds</b> when pressed"
+msgstr "Va envoyer un <b><style=\"logic_on\">Signal Vert</style></b> pendant <b>{0} secondes</b> lorsque le bouton est pressé"
+

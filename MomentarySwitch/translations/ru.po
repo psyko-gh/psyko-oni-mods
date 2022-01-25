@@ -66,3 +66,12 @@ msgctxt ""
 "SIDESCREEN_TITLE"
 msgid "Momentary switch"
 msgstr "Мгновенный переключатель"
+
+#. Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.SIDESCREEN_DURATION_TOOLTIP
+msgctxt ""
+"Psyko.MomentarySwitch.STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH."
+"SIDESCREEN_DURATION_TOOLTIP"
+msgid "Will send <b><style=\"logic_on\">Green Signal</style></b> for <b>{0} seconds</b> when pressed"
+msgstr "Отправит <b><style=\"logic_on\">Зелёный Сигнал</style></b> на <b>{0} секунд</b> когда нажат"
+        
+        
