@@ -68,6 +68,12 @@ namespace Psyko.Freezer
             return def;
         }
 
+        public override void ConfigureBuildingTemplate(GameObject go, Tag prefab_tag)
+        {
+            base.ConfigureBuildingTemplate(go, prefab_tag);
+            go.GetComponent<KPrefabID>().AddTag(RoomConstraints.ConstraintTags.FoodStorage);
+        }
+
         public override void DoPostConfigureComplete(GameObject go)
         {
             Storage storage = go.AddOrGet<Storage>();
