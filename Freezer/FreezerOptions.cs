@@ -8,7 +8,7 @@ namespace Psyko.Freezer
     public class FreezerOptions: SingletonOptions<FreezerOptions>
     {
         [JsonProperty]
-        [Option("Capocity (kg)", "Determines the capacity of the freezer in kg.", Format = "F1")]
+        [Option("Capacity (kg)", "Determines the capacity of the freezer in kg.", Format = "F1")]
         [Limit(10f, 10000f)]
         public float Capacity { get; set; }
 
