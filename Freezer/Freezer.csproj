@@ -18,4 +18,8 @@
       <None Remove="anim\assets\freezer\spriter\door_0.png~" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Update="PLib" Version="4.8.0" />
+    </ItemGroup>
+
 </Project>

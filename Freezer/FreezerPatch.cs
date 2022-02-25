@@ -25,7 +25,8 @@ namespace Psyko.Freezer
             public static void Postfix()
             {
                 Utils.AddBuildingToTech(TechCategory.FinerDining, FreezerConfig.ID);
-                Utils.AddPlan(PlanCategory.Food, FreezerConfig.ID, RefrigeratorConfig.ID);
+                // Maybe use constants for subcategory: see the list here https://github.com/peterhaneve/ONIMods/blob/main/PLibBuildings/PBuilding.cs
+                Utils.AddPlan(PlanCategory.Food, "storage", FreezerConfig.ID, RefrigeratorConfig.ID);
             }
         }
 

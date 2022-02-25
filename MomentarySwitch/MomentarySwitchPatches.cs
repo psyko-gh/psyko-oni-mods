@@ -20,7 +20,7 @@ namespace Psyko.MomentarySwitch
             public static void Postfix()
             {
                 Utils.AddBuildingToTech(TechCategory.LogicControl, MomentarySwitchConfig.ID);
-                Utils.AddPlan(PlanCategory.Automation, MomentarySwitchConfig.ID, LogicSwitchConfig.ID);
+                Utils.AddPlan(PlanCategory.Automation, "switches", MomentarySwitchConfig.ID, LogicSwitchConfig.ID);
             }
         }
         

@@ -34,14 +34,20 @@ namespace Psyko.Freezer
 
         protected override void OnSpawn()
         {
+            Debug.Log("1");
             this.GetComponent<KAnimControllerBase>().Play((HashedString) "off");
+            Debug.Log("2");
             this.filteredStorage.FilterChanged();
+            Debug.Log("3");
             this.UpdateLogicCircuit();
+            Debug.Log("4");
             this.Subscribe((int) GameHashes.CopySettings, OnCopySettingsDelegate);
             this.Subscribe((int) GameHashes.OnStorageChange, UpdateLogicCircuitCBDelegate);
             this.Subscribe((int) GameHashes.OperationalChanged, UpdateLogicCircuitCBDelegate);
             this.Subscribe((int) GameHashes.OperationalChanged, UpdateIciclesDelegate);
+            Debug.Log("5");
             this.UpdateIcicles();
+            Debug.Log("6");
         }
  
         protected override void OnCleanUp() => this.filteredStorage.CleanUp();

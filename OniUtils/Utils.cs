@@ -14,13 +14,13 @@ namespace Psyko.OniUtils
             Db.Get().Techs.Get(tech).unlockedItemIDs.Add(idBuilding);
         }
         
-        public static void AddPlan(HashedString category, string idBuilding, string addAfter = null) {
+        public static void AddPlan(HashedString category, string subcategory, string idBuilding, string addAfter = null) {
             Debug.Log("Adding " + idBuilding+ " to category " + category);
             foreach (PlanScreen.PlanInfo menu in TUNING.BUILDINGS.PLANORDER)
             {
                 if (menu.category == category)
                 {
-                    AddPlanToCategory(menu, idBuilding, addAfter);
+                    AddPlanToCategory(menu, subcategory, idBuilding, addAfter);
                     return;
                 }
             }
@@ -28,24 +28,31 @@ namespace Psyko.OniUtils
             Debug.Log($"Unknown build menu category: ${category}");
         }
 
-        private static void AddPlanToCategory(PlanScreen.PlanInfo menu, string idBuilding, string addAfter = null)
+        private static void AddPlanToCategory(PlanScreen.PlanInfo menu, string subcategory, string idBuilding, string addAfter = null)
         {
-            List<string> data = menu.data;
+            List<KeyValuePair<string, string>> data = menu.buildingAndSubcategoryData;
             if (data != null)
             {
                 if (addAfter == null)
                 {
-                    data.Add(idBuilding);
+                    data.Add(new KeyValuePair<string, string>(idBuilding, subcategory));
                 }
                 else
                 {
-                    int index = data.IndexOf(addAfter);
+                    /*
+                    foreach (KeyValuePair<string, string> k in data)
+                    {
+                        Debug.Log($"{k.Key}/{k.Value}");
+                    }
+                    */
+                    int index = data.IndexOf(new KeyValuePair<string, string>(addAfter, subcategory));
                     if (index == -1)
                     {
-                        Debug.Log($"Could not find building ${addAfter} to add ${idBuilding} after");
+                        Debug.Log($"Could not find building {subcategory}/{addAfter} to add {idBuilding} after. Adding at the end !");
+                        data.Add(new KeyValuePair<string, string>(idBuilding, subcategory));                        
                         return;
                     }
-                    data.Insert(index + 1, idBuilding);
+                    data.Insert(index + 1, new KeyValuePair<string, string>(idBuilding, subcategory));
                 }
             }
         }

@@ -21,4 +21,8 @@
       <Folder Include="anim\assets\momentaryswitch" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Update="PLib" Version="4.8.0" />
+    </ItemGroup>
+
 </Project>
