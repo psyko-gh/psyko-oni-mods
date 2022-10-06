@@ -23,7 +23,6 @@ namespace Psyko.Freezer
         
         protected override void OnPrefabInit() => this.filteredStorage = new FilteredStorage(
             this,
-            null, 
             new Tag[1]
             {
                 GameTags.Compostable
