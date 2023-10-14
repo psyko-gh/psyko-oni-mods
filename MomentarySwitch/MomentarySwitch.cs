@@ -120,7 +120,7 @@ namespace Psyko.MomentarySwitch
 
         public string GetSliderTooltipKey(int index) => "STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.SIDESCREEN_DURATION_TOOLTIP";
 
-        string ISliderControl.GetSliderTooltip() => string.Format((string) Strings.Get("STRINGS.BUILDINGS.PREFABS.MOMENTARYSWITCH.SIDESCREEN_DURATION_TOOLTIP"), (object) this.delayAmount);
+        string ISliderControl.GetSliderTooltip(int index) => string.Format((string) Strings.Get(GetSliderTooltipKey(index)), (object) this.delayAmount);
 
         
     }

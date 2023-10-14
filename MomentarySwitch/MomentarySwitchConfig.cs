@@ -24,7 +24,7 @@ namespace Psyko.MomentarySwitch
                 build_location_rule: BuildLocationRule.Anywhere,
                 decor: BUILDINGS.DECOR.NONE,
                 noise: NOISE_POLLUTION.NONE
-            );
+            );                        
             buildingDef.Overheatable = false;
             buildingDef.Floodable = false;
             buildingDef.Entombable = false;
@@ -45,13 +45,12 @@ namespace Psyko.MomentarySwitch
             };
             SoundEventVolumeCache.instance.AddVolume("switchpower_kanim", "PowerSwitch_on", NOISE_POLLUTION.NOISY.TIER3);
             SoundEventVolumeCache.instance.AddVolume("switchpower_kanim", "PowerSwitch_off", NOISE_POLLUTION.NOISY.TIER3);
-            GeneratedBuildings.RegisterWithOverlay(OverlayModes.Logic.HighlightItemIDs, LogicSwitchConfig.ID);
+            GeneratedBuildings.RegisterWithOverlay(OverlayModes.Logic.HighlightItemIDs, MomentarySwitchConfig.ID);
             return buildingDef;
         }
         
         public override void ConfigureBuildingTemplate(GameObject go, Tag prefab_tag)
         {
-            go.AddOrGet<BuildingComplete>().isManuallyOperated = false;
             GeneratedBuildings.MakeBuildingAlwaysOperational(go);
             go.AddOrGet<MomentarySwitch>().manuallyControlled = false;
             go.AddOrGet<MomentarySwitch>().defaultState = false;
