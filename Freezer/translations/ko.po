@@ -1,0 +1,74 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not IncludedPOT Version: 2.0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: \n"
+"Language: ko_KR\n"
+
+#. Psyko.Freezer.STRINGS.BUILDING.STATUSITEMS.FRIDGECOOLING.NAME
+#: 
+msgctxt "Psyko.Freezer.STRINGS.BUILDING.STATUSITEMS.FRIDGECOOLING.NAME"
+msgid "Cooling Contents: {UsedPower}"
+msgstr "내용물 냉각：{UsedPower}"
+
+#. Psyko.Freezer.STRINGS.BUILDING.STATUSITEMS.FRIDGECOOLING.TOOLTIP
+#: 
+msgctxt "Psyko.Freezer.STRINGS.BUILDING.STATUSITEMS.FRIDGECOOLING.TOOLTIP"
+msgid "{UsedPower} of {MaxPower} are being used to cool the contents of this food storage"
+msgstr "{UsedPower}중 {MaxPower}가 내용물을 냉각하는데 사용중입니다"
+
+#. Psyko.Freezer.STRINGS.BUILDING.STATUSITEMS.FRIDGESTEADY.NAME
+#: 
+msgctxt "Psyko.Freezer.STRINGS.BUILDING.STATUSITEMS.FRIDGESTEADY.NAME"
+msgid "Energy Saver: {UsedPower}"
+msgstr "절전 모드：{UsedPower}"
+
+#. Psyko.Freezer.STRINGS.BUILDING.STATUSITEMS.FRIDGESTEADY.TOOLTIP
+#: 
+msgctxt "Psyko.Freezer.STRINGS.BUILDING.STATUSITEMS.FRIDGESTEADY.TOOLTIP"
+msgid "The contents of this food storage are at refrigeration temperatures\n"
+"\n"
+"Energy Saver mode has been automatically activated using only {UsedPower} of {MaxPower}"
+msgstr "이 식품 저장고의 내용물은 냉장 온도에 있습니다.\n"
+"\n"
+"에너지 절약 모드는 {UsedPower}중 {MaxPower}만 사용하여 자동으로 활성화 되었습니다."
+
+#. Psyko.Freezer.STRINGS.BUILDINGS.PREFABS.FREEZER.DESC
+#: 
+msgctxt "Psyko.Freezer.STRINGS.BUILDINGS.PREFABS.FREEZER.DESC"
+msgid "Food will be kept nice and very cold."
+msgstr "식품을 낮은온도에서 보관해 부패속도를 늦춥니다."
+
+#. Psyko.Freezer.STRINGS.BUILDINGS.PREFABS.FREEZER.EFFECT
+#: 
+msgctxt "Psyko.Freezer.STRINGS.BUILDINGS.PREFABS.FREEZER.EFFECT"
+msgid "Stores <link=\"FOOD\">Food</link> at a very cold <link=\"HEAT\">Temperature</link> to stop spoilage."
+msgstr "<link=\"FOOD\">식품</link>을 아주 낮은 <link=\"HEAT\">온도</link>에서 보관해 부패속도를 매우 늦춥니다."
+
+#. Psyko.Freezer.STRINGS.BUILDINGS.PREFABS.FREEZER.LOGIC_PORT
+#: 
+msgctxt "Psyko.Freezer.STRINGS.BUILDINGS.PREFABS.FREEZER.LOGIC_PORT"
+msgid "Full/Not Full"
+msgstr "가득참/차지않았음"
+
+#. Psyko.Freezer.STRINGS.BUILDINGS.PREFABS.FREEZER.LOGIC_PORT_ACTIVE
+#: 
+msgctxt "Psyko.Freezer.STRINGS.BUILDINGS.PREFABS.FREEZER.LOGIC_PORT_ACTIVE"
+msgid "Sends a <b><style=\"logic_on\">Green Signal</style></b> when full"
+msgstr "가득 차면 <b><style=\"logic_on\">녹색 신호</style></b>를 보냅니다"
+
+#. Psyko.Freezer.STRINGS.BUILDINGS.PREFABS.FREEZER.LOGIC_PORT_INACTIVE
+#: 
+msgctxt "Psyko.Freezer.STRINGS.BUILDINGS.PREFABS.FREEZER.LOGIC_PORT_INACTIVE"
+msgid "Otherwise, sends a <b><style=\"logic_off\">Red Signal</style></b>"
+msgstr "그 외에는 <b><style=\"logic_off\">적색 신호</style></b>를 보냅니다"
+
+#. Psyko.Freezer.STRINGS.BUILDINGS.PREFABS.FREEZER.NAME
+#: 
+msgctxt "Psyko.Freezer.STRINGS.BUILDINGS.PREFABS.FREEZER.NAME"
+msgid "<link=\"FREEZER\">Freezer</link>"
+msgstr "<link=\"FREEZER\">냉동고</link>"
+
