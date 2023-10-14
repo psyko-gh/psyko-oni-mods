@@ -4,6 +4,7 @@ using PeterHan.PLib.AVC;
 using PeterHan.PLib.Core;
 using PeterHan.PLib.Options;
 using Psyko.OniUtils;
+using UnityEngine;
 
 namespace Psyko.Freezer
 {
@@ -36,6 +37,5 @@ namespace Psyko.Freezer
             public static void Postfix() => Utils.Translate(typeof(STRINGS));
 
         }
-        
     }
 }

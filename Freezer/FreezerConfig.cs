@@ -97,6 +97,7 @@ namespace Psyko.Freezer
             go.AddOrGet<DropAllWorkable>();
             go.AddOrGetDef<RocketUsageRestriction.Def>().restrictOperational = false;
             go.AddOrGetDef<StorageController.Def>();
+            PPatchTools.GetTypeSafe("PeterHan.NoWasteWant.NoWasteWantPatches")?.GetMethodSafe("AddFreshnessControl", true, typeof(GameObject))?.Invoke(null, new object[] { go });
         }
     }
 }
