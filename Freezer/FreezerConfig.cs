@@ -87,6 +87,8 @@ namespace Psyko.Freezer
             storage.showCapacityStatusItem = true;
             Prioritizable.AddRef(go);
             go.AddOrGet<TreeFilterable>();
+            go.AddOrGet<FoodStorage>();
+            go.AddOrGet<Refrigerator>();
             go.AddOrGet<Freezer>();
             RefrigeratorController.Def def = go.AddOrGetDef<RefrigeratorController.Def>();
             def.powerSaverEnergyUsage = FreezerOptions.Instance.EnergySaverPower;
